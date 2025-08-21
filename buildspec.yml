@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.13
+    commands:
+      - echo "Installing dependencies..."
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+      - pip install pytest  # Install your testing framework
+  build:
+    commands:
+      - echo "Running tests..."
+      - pytest  # The command to run your tests

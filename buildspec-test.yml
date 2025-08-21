@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.13  # Make sure this matches your project's Python version
+    commands:
+      - echo "Installing dependencies..."
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+      - pip install pytest  # Or any other testing framework you use
+  build:
+    commands:
+      - echo "Running tests..."
+      - pytest  # The command to run your tests
+
+reports:
+  pytest_reports:
+    files:
+      - '**/*'
+    base-directory: './'
+    file-format: JUNITXML
